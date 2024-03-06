@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { sendPasswordResetEmail, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { auth } from '../../../firebase.config';
 
 export default function useAuthentication() {
@@ -13,8 +13,12 @@ export default function useAuthentication() {
       });
   };
 
+  const resetPassword = (email: string) =>
+    sendPasswordResetEmail(auth, email.toLowerCase());
+
   return {
     doLogin,
-    doLogout
+    doLogout,
+    resetPassword
   };
 }

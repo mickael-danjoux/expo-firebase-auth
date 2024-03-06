@@ -1,16 +1,14 @@
 import { router } from 'expo-router';
 import FirebaseSignIn from '@packages/FirebaseAuth/Components/FirebaseSignIn';
-import { SafeAreaView } from 'react-native';
-import { useTheme } from 'react-native-paper';
+import FirebaseSafeView from '@packages/FirebaseAuth/Components/FirebaseSafeView';
 
 
 export default function SignIn() {
-  const {colors} = useTheme()
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }}>
+    <FirebaseSafeView>
       <FirebaseSignIn onSuccess={()=>{
         router.replace('/(tabs)')
       }}/>
-    </SafeAreaView>
+    </FirebaseSafeView>
   );
 }

@@ -45,7 +45,7 @@ export function AuthenticationProvider({ children }: PropsWithChildren) {
         if (user === null && u === null) {
           setUser(null);
           setLoggedIn(false);
-          router.replace('/(auth)/sign-in');
+          router.replace('(auth)/sign-in');
         }
 
         return;

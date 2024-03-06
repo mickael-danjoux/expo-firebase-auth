@@ -6,11 +6,9 @@
 - Formik 2.4
 - Yup 2.3
 
-
 ## How to use ?
 
 ### Install packages
-
 
 ```shell
 npm i @react-native-async-storage/async-storage@1.22 react-native-paper@5.12 formik@2.4 yup@2.3
@@ -18,12 +16,21 @@ npx expo install firebase@10.8
 ```
 
 ### Copy package
+
 Copy these files in your project
 
--  `/packages/FirebaseAuth`
--  `firebase.config.ts`
+- `/app/(auth)`
+- `/packages/FirebaseAuth`
+- `firebase.config.ts`
+
+Add stack in your main layout
+
+```tsx
+ <Stack.Screen name={'(auth)'} options={{ headerShown: false }} />
+```
 
 ### Configure
+
 #### Set `.env` vars
 
 ```dotenv
@@ -41,6 +48,7 @@ EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID=
 ```shell
 npx expo customize metro.config.js
 ```
+
 in `metro.config.js`
 
 ```js
@@ -50,3 +58,9 @@ defaultConfig.resolver.sourceExts.push('cjs');
 
 module.exports = defaultConfig;
 ```
+
+### Texts
+
+All text in this module are provided by a Hook. You can simply edit it or use a translation Hook.
+
+Edit texts in `/packages/FirebaseAuth/Hooks/useAuthenticationTexts`

@@ -26,7 +26,6 @@ const makeStyle = (theme: ThemeProp) => StyleSheet.create({
   mainView: {
     flex: 1,
     paddingTop: '40%',
-    paddingHorizontal: 16,
     backgroundColor: theme.colors?.background
   },
 });

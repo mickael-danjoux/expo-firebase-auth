@@ -8,6 +8,7 @@ import { Formik } from 'formik';
 import useAuthentication from '@packages/FirebaseAuth/Hooks/useAuthentication';
 import { router } from 'expo-router';
 import useAuthenticationTexts from '@packages/FirebaseAuth/Hooks/useAuthenticationTexts';
+import GlobalError from '@packages/FirebaseAuth/Components/GlobalError';
 
 
 interface SignInModel {
@@ -73,11 +74,8 @@ const texts = useAuthenticationTexts()
         errors,
       }) => (
         <View>
-          {globalError &&
-            <View style={styles.globalError}>
-              <Text style={styles.globalErrorText}>{globalError}</Text>
-            </View>
-          }
+          <GlobalError message={globalError}/>
+
           <View style={styles.input}>
             <TextInput
               value={values.email}
@@ -129,6 +127,13 @@ const texts = useAuthenticationTexts()
           >
             {texts.buttons.submit}
           </Button>
+          <Button
+            mode={'text'}
+            style={[styles.button, styles.forgotPassword]}
+            onPress={() => router.navigate('(auth)/forgot-password')}
+          >
+            {texts.buttons.forgotPassword}
+          </Button>
         </View>
       )}
     </Formik>
@@ -136,23 +141,14 @@ const texts = useAuthenticationTexts()
 }
 
 const makeStyle = (theme: ThemeProp) => StyleSheet.create({
-  globalError: {
-    backgroundColor: '#fff3cd',
-    borderColor: '#ffeeba',
-    borderWidth: 1,
-    marginBottom: 8,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
-    borderRadius: theme.roundness,
-  },
-  globalErrorText: {
-    color: '#856404',
-    fontWeight: 'bold',
-  },
   input: {
     marginBottom: 8,
   },
   button: {
     borderRadius: theme.roundness,
   },
+  forgotPassword:{
+    alignItems: 'flex-start',
+    marginLeft: 0
+  }
 });
