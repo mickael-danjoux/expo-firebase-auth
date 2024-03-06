@@ -1,18 +1,20 @@
 # Firebase Auth module
 
-- expo: ~50.0.8
-- node: 18
+- Expo: ~50.0.8
+- Node: v18
+- React native Paper v5
+- Formik 2.4
+- Yup 2.3
 
 
 ## How to use ?
 
 ### Install packages
-- `@react-native-async-storage/async-storage`
-- `firebase`
+
 
 ```shell
-npm i @react-native-async-storage/async-storage
-npx expo install firebase
+npm i @react-native-async-storage/async-storage@1.22 react-native-paper@5.12 formik@2.4 yup@2.3
+npx expo install firebase@10.8
 ```
 
 ### Copy package
