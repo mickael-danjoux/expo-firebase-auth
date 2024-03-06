@@ -8,9 +8,9 @@ import {
 } from 'react';
 
 import { User, onAuthStateChanged as onFirebaseAuthStateChanged } from 'firebase/auth';
-import { auth } from '../firebase.config';
-import deepEqual from '../utils/DeepEqual';
+import { auth } from '../../../firebase.config';
 import { router } from 'expo-router';
+import deepEqual from '@packages/FirebaseAuth/Utils/DeepEqual';
 
 interface AuthenticationContextProps {
   user: User | null;

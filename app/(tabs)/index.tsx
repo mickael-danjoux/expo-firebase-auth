@@ -1,5 +1,5 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
-import useAuthentication from '../../hooks/useAuthentication';
+import useAuthentication from '@packages/FirebaseAuth/Hooks/useAuthentication';
 
 export default function Index() {
   const {doLogout} = useAuthentication()

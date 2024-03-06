@@ -1,5 +1,5 @@
 import { Stack } from 'expo-router';
-import { AuthenticationProvider } from '../contexts/AuthenticationContext';
+import { AuthenticationProvider } from '@packages/FirebaseAuth/Contexts/AuthenticationContext';
 
 
 export default function RootLayout() {

@@ -1,7 +1,7 @@
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useState } from 'react';
-import useAuthentication from '../../hooks/useAuthentication';
 import { router } from 'expo-router';
+import useAuthentication from '@packages/FirebaseAuth/Hooks/useAuthentication';
 
 
 export default function SignIn() {
@@ -18,7 +18,8 @@ export default function SignIn() {
       await doLogin(email, password);
       router.replace('/(tabs)');
     } catch (error: any) {
-      if ( ['auth/invalid-credential', 'auth/invalid-email'].includes(error.code)) {
+      console.error(error);
+      if (['auth/invalid-credential', 'auth/invalid-email'].includes(error.code)) {
         setError('Invalid Credentials');
       }
     }

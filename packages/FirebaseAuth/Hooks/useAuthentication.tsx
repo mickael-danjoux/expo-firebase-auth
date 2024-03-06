@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { auth } from '../firebase.config';
+import { auth } from '../../../firebase.config';
 
 export default function useAuthentication() {
 
