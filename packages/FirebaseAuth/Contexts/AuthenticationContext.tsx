@@ -35,7 +35,6 @@ export function AuthenticationProvider({ children }: PropsWithChildren) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoggedIn, setLoggedIn] = useState(false);
 
-
   // Handle user state changes
   const onAuthStateChanged = useCallback(
     (u: User | null) => {

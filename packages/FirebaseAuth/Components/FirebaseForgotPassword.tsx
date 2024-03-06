@@ -1,4 +1,4 @@
-import { Button, HelperText, Text, TextInput, useTheme } from 'react-native-paper';
+import { Button, HelperText, TextInput, useTheme } from 'react-native-paper';
 import { useMemo, useState } from 'react';
 import useAuthentication from '@packages/FirebaseAuth/Hooks/useAuthentication';
 import useAuthenticationTexts from '@packages/FirebaseAuth/Hooks/useAuthenticationTexts';

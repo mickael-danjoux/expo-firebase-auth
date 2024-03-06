@@ -1,5 +1,5 @@
 import { Button, HelperText, TextInput, useTheme } from 'react-native-paper';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useMemo, useRef, useState } from 'react';
 import { TextInput as NativeTextInput } from 'react-native/Libraries/Components/TextInput/TextInput';
 import { ThemeProp } from 'react-native-paper/lib/typescript/types';
