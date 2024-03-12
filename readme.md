@@ -11,7 +11,7 @@
 ### Install packages
 
 ```shell
-npm i @react-native-async-storage/async-storage@1.22 react-native-paper@5.12 formik@2.4 yup@2.3
+npm i @react-native-async-storage/async-storage@1.22 react-native-paper@5.12 formik@2.4 yup@1.3 expo-apple-authentication@6.3 expo-crypto@12.8
 npx expo install firebase@10.8
 ```
 
@@ -23,10 +23,14 @@ Copy these files in your project
 - `/packages/FirebaseAuth`
 - `firebase.config.ts`
 
-Add stack in your main layout
+Add context and stack in your main layout
 
 ```tsx
- <Stack.Screen name={'(auth)'} options={{ headerShown: false }} />
+<AuthenticationProvider>
+  <Stack>
+    <Stack.Screen name={'(auth)'} options={{ headerShown: false }} />
+  </Stack>
+</AuthenticationProvider>
 ```
 
 ### Configure
